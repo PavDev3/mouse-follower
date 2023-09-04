@@ -3,8 +3,9 @@ function App() {
   const [enable, setEnable] = useState(false)
   const [position, setPosition] = useState({x: 0, y: 0})
 
+  // Posicion del cursor
 useEffect(() => {
-  console.log('Efecto', {enable})
+
   const handleMove = (event) => {
     const {clientX, clientY} = event
     setPosition({x: clientX, y:clientY})
@@ -21,6 +22,7 @@ useEffect(() => {
 
 }, [enable])
 
+// Efecto de ocultar cursor
 useEffect(() => {
 document.body.classList.toggle('no-cursor', enable)
 

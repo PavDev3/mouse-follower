@@ -21,6 +21,15 @@ useEffect(() => {
 
 }, [enable])
 
+useEffect(() => {
+document.body.classList.toggle('no-cursor', enable)
+
+return () => {
+  document.body.classList.remove('no-cursor')
+
+}
+}, [enable])
+
     return (
       <main>
         <h3>Seguimiento de puntero</h3>
